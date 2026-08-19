@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-npx hardhat node > hardhat.log 2>&1 &
+npx hardhat node --hostname 0.0.0.0 > hardhat.log 2>&1 &
 echo "Waiting for Hardhat node to start..."
 sleep 5
 echo "Deploying contracts..."
