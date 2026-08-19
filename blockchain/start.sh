@@ -1,8 +1,9 @@
 #!/bin/sh
-npx hardhat node &
-# Wait for node to start
+set -e
+npx hardhat node > hardhat.log 2>&1 &
+echo "Waiting for Hardhat node to start..."
 sleep 5
-# Deploy and run script
+echo "Deploying contracts..."
 npx hardhat run scripts/deploy.cjs --network localhost
-# Keep container alive
+echo "Blockchain is ready and contracts are deployed."
 wait
