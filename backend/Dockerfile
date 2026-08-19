@@ -5,4 +5,4 @@ RUN npm install
 COPY . .
 RUN chmod +x ./start.sh
 EXPOSE 5000
-CMD ["./start.sh"]
+CMD ["sh", "./start.sh"]

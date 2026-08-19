@@ -7,4 +7,4 @@ RUN chmod +x ./start.sh
 # Compile contracts
 RUN npx hardhat compile
 EXPOSE 8545
-CMD ["./start.sh"]
+CMD ["sh", "./start.sh"]
