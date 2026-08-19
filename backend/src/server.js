@@ -72,7 +72,12 @@ const nonceManagerWallet = new ethers.NonceManager(wallet);
 // Load compiled contract artifact
 let contractArtifact;
 try {
-    contractArtifact = require('../../blockchain/artifacts/contracts/EmploymentRegistry.sol/EmploymentRegistry.json');
+    // Try docker path first, then local fallback
+    let artifactPath = path.join(__dirname, '../blockchain/artifacts/contracts/EmploymentRegistry.sol/EmploymentRegistry.json');
+    if (!fs.existsSync(artifactPath)) {
+        artifactPath = path.join(__dirname, '../../blockchain/artifacts/contracts/EmploymentRegistry.sol/EmploymentRegistry.json');
+    }
+    contractArtifact = require(artifactPath);
 } catch (e) {
     console.warn("Contract artifact not found. Please compile the hardhat project.");
 }

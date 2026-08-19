@@ -5,6 +5,8 @@ services:
     build: ./blockchain
     ports:
       - "8545:8545"
+    volumes:
+      - blockchain_artifacts:/app/artifacts
 
   backend:
     build: ./backend
@@ -17,6 +19,7 @@ services:
       - PORT=5000
     volumes:
       - backend_uploads:/app/uploads
+      - blockchain_artifacts:/app/blockchain/artifacts
     depends_on:
       - blockchain
 
@@ -29,3 +32,4 @@ services:
 
 volumes:
   backend_uploads:
+  blockchain_artifacts:
