@@ -61,7 +61,7 @@ function getFileMapping(recordId) {
 }
 
 // Blockchain interaction setup
-const provider = new ethers.JsonRpcProvider('http://127.0.0.1:8545');
+const provider = new ethers.JsonRpcProvider(process.env.RPC_URL || 'http://127.0.0.1:8545');
 // In a real app we wouldn't store private keys like this, but for PoC we use hardhat's first default account to act as a relayer
 const privateKey = process.env.PRIVATE_KEY || "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
 
