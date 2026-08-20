@@ -12,8 +12,8 @@ const NavLink = ({ to, children }: { to: string, children: React.ReactNode }) =>
       to={to}
       className={`px-4 py-2 rounded-md font-medium transition-colors ${
         isActive
-          ? 'bg-blue-700 text-white shadow-sm'
-          : 'text-blue-100 hover:bg-blue-600 hover:text-white'
+          ? 'bg-slate-700 text-white shadow-sm'
+          : 'text-slate-200 hover:bg-slate-600 hover:text-white'
       }`}
     >
       {children}
@@ -23,8 +23,8 @@ const NavLink = ({ to, children }: { to: string, children: React.ReactNode }) =>
 
 function AppContent() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
-      <nav className="bg-blue-800 shadow-md">
+    <div className="min-h-screen bg-slate-200 flex flex-col font-sans">
+      <nav className="bg-slate-800 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -56,10 +56,10 @@ function AppContent() {
                   A secure, blockchain-based system to issue, manage, and verify employment records.
                 </p>
                 <div className="mt-10 flex justify-center gap-4">
-                  <Link to="/hr" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                  <Link to="/hr" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-slate-700 hover:bg-slate-700">
                     I am an HR
                   </Link>
-                  <Link to="/candidate" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200">
+                  <Link to="/candidate" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-slate-700 bg-slate-300 hover:bg-slate-400">
                     I am a Candidate
                   </Link>
                 </div>
@@ -69,7 +69,7 @@ function AppContent() {
         </div>
       </main>
 
-      <footer className="bg-white border-t border-gray-200 mt-auto">
+      <footer className="bg-slate-100 border-t border-slate-300 mt-auto">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm text-gray-500">
             &copy; {new Date().getFullYear()} DeVerify. All rights reserved.
