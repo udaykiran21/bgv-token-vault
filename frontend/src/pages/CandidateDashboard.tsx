@@ -42,12 +42,12 @@ const CandidateDashboard: React.FC = () => {
 
     return (
         <div className="space-y-6">
-            <div className="pb-5 border-b border-gray-200">
+            <div className="pb-5 border-b border-slate-300">
                 <h2 className="text-2xl leading-6 font-bold text-gray-900">Candidate Dashboard</h2>
                 <p className="mt-2 max-w-4xl text-sm text-gray-500">Manage your employment history and share verified records with future employers.</p>
             </div>
 
-            <div className="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
+            <div className="bg-slate-100 shadow px-4 py-5 sm:rounded-lg sm:p-6">
                 <div className="md:grid md:grid-cols-3 md:gap-6">
                     <div className="md:col-span-1">
                         <h3 className="text-lg font-medium leading-6 text-gray-900">Wallet Configuration</h3>
@@ -59,15 +59,15 @@ const CandidateDashboard: React.FC = () => {
                         <div className="grid grid-cols-6 gap-6">
                             <div className="col-span-6 sm:col-span-4">
                                 <label htmlFor="address" className="block text-sm font-medium text-gray-700">Address</label>
-                                <input type="text" id="address" value={candidateAddress} onChange={e => setCandidateAddress(e.target.value)} className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-3 border" />
+                                <input type="text" id="address" value={candidateAddress} onChange={e => setCandidateAddress(e.target.value)} className="mt-1 focus:ring-slate-500 focus:border-slate-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-3 border" />
                             </div>
                             <div className="col-span-6 sm:col-span-4">
                                 <label htmlFor="pk" className="block text-sm font-medium text-gray-700">Private Key (For PoC Signing)</label>
-                                <input type="password" id="pk" value={privateKey} onChange={e => setPrivateKey(e.target.value)} className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-3 border" />
+                                <input type="password" id="pk" value={privateKey} onChange={e => setPrivateKey(e.target.value)} className="mt-1 focus:ring-slate-500 focus:border-slate-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-3 border" />
                             </div>
                         </div>
                         <div className="mt-4">
-                            <button onClick={fetchRecords} className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <button onClick={fetchRecords} className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-slate-700 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
                                 Fetch My Records
                             </button>
                         </div>
@@ -76,13 +76,13 @@ const CandidateDashboard: React.FC = () => {
             </div>
 
             {records.length > 0 && (
-                <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+                <div className="bg-slate-100 shadow overflow-hidden sm:rounded-lg">
                     <div className="px-4 py-5 sm:px-6">
                         <h3 className="text-lg leading-6 font-medium text-gray-900">My Employment Records</h3>
                     </div>
-                    <div className="border-t border-gray-200">
-                        <table className="min-w-full divide-y divide-gray-200">
-                            <thead className="bg-gray-50">
+                    <div className="border-t border-slate-300">
+                        <table className="min-w-full divide-y divide-slate-300">
+                            <thead className="bg-slate-200">
                                 <tr>
                                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
                                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Company</th>
@@ -91,7 +91,7 @@ const CandidateDashboard: React.FC = () => {
                                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                                 </tr>
                             </thead>
-                            <tbody className="bg-white divide-y divide-gray-200">
+                            <tbody className="bg-slate-100 divide-y divide-slate-300">
                                 {records.map(r => (
                                     <tr key={r.id}>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{r.id}</td>
@@ -113,7 +113,7 @@ const CandidateDashboard: React.FC = () => {
                 </div>
             )}
 
-            <div className="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
+            <div className="bg-slate-100 shadow px-4 py-5 sm:rounded-lg sm:p-6">
                 <div className="md:grid md:grid-cols-3 md:gap-6">
                     <div className="md:col-span-1">
                         <h3 className="text-lg font-medium leading-6 text-gray-900">Grant Access</h3>
@@ -125,15 +125,15 @@ const CandidateDashboard: React.FC = () => {
                         <div className="grid grid-cols-6 gap-6">
                             <div className="col-span-6 sm:col-span-3">
                                 <label className="block text-sm font-medium text-gray-700">Future HR GSTIN</label>
-                                <input type="text" placeholder="e.g. 29BBBBB5678B2Z6" value={targetGstin} onChange={e => setTargetGstin(e.target.value)} className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-3 border" />
+                                <input type="text" placeholder="e.g. 29BBBBB5678B2Z6" value={targetGstin} onChange={e => setTargetGstin(e.target.value)} className="mt-1 focus:ring-slate-500 focus:border-slate-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-3 border" />
                             </div>
                             <div className="col-span-6 sm:col-span-3">
                                 <label className="block text-sm font-medium text-gray-700">Record ID</label>
-                                <input type="number" placeholder="1" value={recordIdToGrant} onChange={e => setRecordIdToGrant(e.target.value)} className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-3 border" />
+                                <input type="number" placeholder="1" value={recordIdToGrant} onChange={e => setRecordIdToGrant(e.target.value)} className="mt-1 focus:ring-slate-500 focus:border-slate-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md py-2 px-3 border" />
                             </div>
                         </div>
                         <div className="mt-4">
-                            <button onClick={handleGrantAccess} className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <button onClick={handleGrantAccess} className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-slate-700 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500">
                                 Grant Access
                             </button>
                         </div>
