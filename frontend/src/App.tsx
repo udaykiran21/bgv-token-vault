@@ -12,8 +12,8 @@ const NavLink = ({ to, children }: { to: string, children: React.ReactNode }) =>
       to={to}
       className={`px-4 py-2 rounded-md font-medium transition-colors ${
         isActive
-          ? 'bg-slate-700 text-white shadow-sm'
-          : 'text-slate-200 hover:bg-slate-600 hover:text-white'
+          ? 'bg-indigo-700 text-white shadow-sm'
+          : 'text-indigo-100 hover:bg-indigo-600 hover:text-white'
       }`}
     >
       {children}
@@ -23,8 +23,8 @@ const NavLink = ({ to, children }: { to: string, children: React.ReactNode }) =>
 
 function AppContent() {
   return (
-    <div className="min-h-screen bg-slate-200 flex flex-col font-sans">
-      <nav className="bg-slate-800 shadow-md">
+    <div className="min-h-screen bg-indigo-100 flex flex-col font-sans">
+      <nav className="bg-indigo-900 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -49,17 +49,17 @@ function AppContent() {
             <Route path="/candidate" element={<CandidateDashboard />} />
             <Route path="/" element={
               <div className="text-center py-20">
-                <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+                <h1 className="text-4xl font-extrabold text-indigo-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
                   Decentralized Employment Verification
                 </h1>
-                <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
+                <p className="mt-5 max-w-xl mx-auto text-xl text-indigo-500">
                   A secure, blockchain-based system to issue, manage, and verify employment records.
                 </p>
                 <div className="mt-10 flex justify-center gap-4">
-                  <Link to="/hr" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-slate-700 hover:bg-slate-700">
+                  <Link to="/hr" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
                     I am an HR
                   </Link>
-                  <Link to="/candidate" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-slate-700 bg-slate-300 hover:bg-slate-400">
+                  <Link to="/candidate" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
                     I am a Candidate
                   </Link>
                 </div>
@@ -69,9 +69,9 @@ function AppContent() {
         </div>
       </main>
 
-      <footer className="bg-slate-100 border-t border-slate-300 mt-auto">
+      <footer className="bg-indigo-50 border-t border-indigo-200 mt-auto">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm text-gray-500">
+          <p className="text-center text-sm text-indigo-500">
             &copy; {new Date().getFullYear()} DeVerify. All rights reserved.
           </p>
         </div>
