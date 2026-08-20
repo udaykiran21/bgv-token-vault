@@ -12,7 +12,7 @@ async function main() {
 
   // Write address to a .env file for the backend
   const envContent = `CONTRACT_ADDRESS=${address}\n`;
-  fs.writeFileSync(path.join(__dirname, "../../backend/.env"), envContent, { flag: 'a' });
+  try { fs.mkdirSync(path.join(__dirname, "../../backend"), { recursive: true }); fs.writeFileSync(path.join(__dirname, "../../backend/.env"), envContent, { flag: 'a' }); } catch(e) { console.warn("Could not write to backend .env", e); }
 }
 
 main().catch((error) => {
